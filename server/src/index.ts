@@ -1,7 +1,8 @@
+import {config} from "dotenv"
+config();
 import express, {Request,Response} from "express";
 import mongoose from "mongoose";
 import User from "./models/Users";
-
 const app = express();
 app.use(express.json());
 const PORT = 5000
@@ -20,7 +21,8 @@ app.post("/user/register",async (req: Request, res : Response)=>{
     const createUser = await newUser.save();
     res.json(createUser);
 })
-mongoose.connect('mongodb+srv://typehero:zLeBwhPldgiNpmWQ@typehero.yqdawhq.mongodb.net/?retryWrites=true&w=majority').then(()=>{
+mongoose.connect(process.env.MONGO_URL!).then(()=>{
 app.listen(PORT);
 console.log(`Listening on port ${PORT}`)
 })
+console.log(process.env);
