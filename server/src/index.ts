@@ -1,28 +1,30 @@
 import {config} from "dotenv"
-config();
 import express, {Request,Response} from "express";
 import mongoose from "mongoose";
-import User from "./models/Users";
+import cors from "cors"
+//Controllers
+import userRegisterController from "./controllers/userRegisterController";
+import userLoginController from "./controllers/userLoginController";
+//Setup area
+
+config();
+mongoose.set('strictQuery', false);
 const app = express();
+app.use(cors())
 app.use(express.json());
+
+//magicNumber
+
 const PORT = 5000
 
-app.get("/",(req: Request,res : Response) =>
-{
-    res.send("Hello world!"); 
-})
-app.post("/user/register",async (req: Request, res : Response)=>{
-    const newUser = new User(
-        {
-            name: req.body.name,
-            password: req.body.password
-        }
-    )
-    const createUser = await newUser.save();
-    res.json(createUser);
-})
+//End-point haven
+
+app.post("/user/register",userRegisterController);
+app.post("/user/login",userLoginController);
+
+//database
+
 mongoose.connect(process.env.MONGO_URL!).then(()=>{
 app.listen(PORT);
 console.log(`Listening on port ${PORT}`)
-})
-console.log(process.env);
+});
