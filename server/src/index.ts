@@ -5,6 +5,9 @@ import cors from "cors"
 //Controllers
 import userRegisterController from "./controllers/userRegisterController";
 import userLoginController from "./controllers/userLoginController";
+import mapsGetController from "./controllers/mapsGetController";
+import mapsCreateController from "./controllers/mapsCreateController";
+import mapsGetUsersMapsController from "./controllers/mapsGetUsersMapsController";
 //Setup area
 
 config();
@@ -21,6 +24,9 @@ const PORT = 5000
 
 app.post("/user/register",userRegisterController);
 app.post("/user/login",userLoginController);
+app.get("/maps",mapsGetController);
+app.get("/maps/users",mapsGetUsersMapsController);
+app.post("/maps/create",mapsCreateController);
 
 //database
 

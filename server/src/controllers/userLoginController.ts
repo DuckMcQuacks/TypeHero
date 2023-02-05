@@ -6,7 +6,7 @@ export default async function userLoginController(req: Request, res : Response){
     const userData = await User.find({name: req.body.name})
     if(userData.length == 0)
     {
-        res.json("Incorrect username");
+        res.json("Incorrect username.");
     }
     else
     {
