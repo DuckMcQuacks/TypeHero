@@ -28,6 +28,9 @@
   justify-content: space-between;
 }
 /* #region Navbar */
+.linkButtons{
+  text-decoration: none;
+}
 @media only screen and (min-width: 901px) {
   nav{
     font-size: calc(18px + .3vw);
@@ -124,3 +127,18 @@
 
 }
 /* #endregion Navbar */
+/* #region HomePage */
+.homePage{
+  display: grid;
+  grid-template-columns:  1fr 1fr;
+  text-align: center;
+  align-items: center;
+}
+.homePage h1
+{
+  background: linear-gradient(45deg, rgba(0,255,218,1) 3%, rgba(0,149,185,1) 50%, rgba(0,58,150,0.9637605042016807) 100%);
+  padding:50px 0px;
+  margin: 10px 6vw;
+  border-radius: 5px;
+}
+/* #endregion HomePage */

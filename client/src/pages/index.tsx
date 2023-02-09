@@ -1,5 +1,4 @@
 import Head from 'next/head'
-import Navbar from "./Navbar";
 import styles from '@/styles/Home.module.css'
 
 
@@ -13,8 +12,11 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Navbar />
-      <main className={styles.main}>
+      <main>
+        <div className='homePage'>
+        <div><h1>Singleplayer</h1></div>
+        <div><h1>Multiplayer</h1></div>
+        </div>
       </main>
     </>
   )

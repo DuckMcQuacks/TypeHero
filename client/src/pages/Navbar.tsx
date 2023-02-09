@@ -26,12 +26,11 @@ export default function Navbar(){
             <h1>W.I.P ICON</h1>
             <Image src={ isMenuOpen ? "/next.svg" : "/menuIcon.svg"} width={50} height={50} alt ={"menu/close icon"} className={"hamburgIcon"} onClick={mobileMenuHandler}/>
             </div>
-            <div className="nav-menu" style={{display: isMenuOpen ? "" : "none"}}>
-            <div className='linkButtons'>Home</div>
-            <div className='linkButtons'>Gamemodes</div>
-            <div className='linkButtons'>Profile</div>
-            <div className='linkButtons'>Friends</div>
-            <div className='linkButtons'>Logout/(Login/Register)</div>
+            <div className="nav-menu" style={{display: (isMenuOpen ? "flex" : "none"), flexFlow: (innerWidth>900 ? "row" : "column")}}>
+            <Link href = "/" className='linkButtons' >Home</Link>
+            <Link href = "/profile" className='linkButtons' >Profile</Link>
+            <Link href = "/friends" className='linkButtons' >Friends</Link>
+            <Link href = "/login" className='linkButtons' >Login</Link>
             </div>
         </nav>
     )
