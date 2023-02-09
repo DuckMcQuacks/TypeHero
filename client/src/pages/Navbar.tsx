@@ -20,17 +20,26 @@ export default function Navbar(){
         window.addEventListener("resize",sizeHandler)
         return(()=>{window.removeEventListener("resize",sizeHandler)})
     },[])
+    const iconSize = 70;
     return(
         <nav>
             <div className="fflRow">
-            <h1>W.I.P ICON</h1>
-            <Image src={ isMenuOpen ? "/next.svg" : "/menuIcon.svg"} width={50} height={50} alt ={"menu/close icon"} className={"hamburgIcon"} onClick={mobileMenuHandler}/>
+            <Image style={{backgroundColor: "transparent", marginLeft: "20px"}} src={"TypeHero.png"} width={innerWidth>900? 220 : 110} height={innerWidth>900? 100 : 50} title={"Home"} alt={"Home icon"} />
+            <Image src={ isMenuOpen ? "close-svgrepo-com.svg" : "menuIcon.svg"} width={iconSize} height={iconSize} alt ={"menu/close icon"} className={"hamburgIcon"} onClick={mobileMenuHandler}/>
             </div>
             <div className="nav-menu" style={{display: (isMenuOpen ? "flex" : "none"), flexFlow: (innerWidth>900 ? "row" : "column")}}>
-            <Link href = "/" className='linkButtons' >Home</Link>
-            <Link href = "/profile" className='linkButtons' >Profile</Link>
-            <Link href = "/friends" className='linkButtons' >Friends</Link>
-            <Link href = "/login" className='linkButtons' >Login</Link>
+            <Link href = "/" className={innerWidth > 900 ? "navIcons" : "linkButtons"}>
+                {innerWidth>900? <Image src={"home-svgrepo-com.svg"} width={iconSize} height={iconSize} title={"Home"} alt={"Home icon"} /> : "Home"}
+            </Link>
+            <Link href = "/profile" className={innerWidth>900 ? "navIcons":'linkButtons'} >
+                {innerWidth>900 ? <Image src={"profile-svgrepo-com.svg"} width={iconSize} height={iconSize} title={"Profile"} alt={"Profile icon"} /> : "Profile"}
+            </Link>
+            <Link href = "/friends" className={innerWidth>900 ? "navIcons":'linkButtons'} >
+                {innerWidth>900 ? <Image src={"add-friend-svgrepo-com.svg"} width={iconSize} height={iconSize} title={"Friends"} alt={"Friends icon"} /> : "Friends"}
+            </Link>
+            <Link href = "/login" className={innerWidth>900 ? "navIcons":'linkButtons'} >
+                {innerWidth>900 ? <Image src={"login-svgrepo-com.svg"} width={iconSize} height={iconSize} title={"Login"} alt={"Login icon"} /> : "Login"}
+            </Link>
             </div>
         </nav>
     )
