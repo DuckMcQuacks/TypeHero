@@ -14,7 +14,10 @@ export default function Home() {
       </Head>
       <main>
         <div className='homePage'>
-        <div><h1>Singleplayer</h1></div>
+        <div>
+          <h1>Singleplayer</h1>
+          <div className='gameModes'></div>
+        </div>
         <div><h1>Multiplayer</h1></div>
         </div>
       </main>

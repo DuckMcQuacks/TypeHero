@@ -1,8 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,900;1,600;1,700&display=swap');
 *{
   padding: 0;
   margin: 0;
   font-size: calc(14px + .3vw);
   user-select: none;
+  font-family: 'Source Sans Pro', sans-serif;
 }
 @media (prefers-color-scheme: dark) {
   *{
@@ -65,7 +67,7 @@
   nav{
     position: relative;
     font-size: calc(20px + .3vw);
-    padding: 20px 40px;
+    padding: 5px 10px;
     display: flex;
     flex-flow: column nowrap;
     text-align: center;
@@ -110,17 +112,21 @@
 /* #endregion Navbar */
 /* #region HomePage */
 .homePage{
-  background-image: ;
   display: grid;
   grid-template-columns:  1fr 1fr;
-  text-align: center;
-  align-items: center;
+  height:600px;
+}
+.gameModes
+{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
 }
 .homePage h1
 {
-  background: linear-gradient(45deg, rgba(0,255,218,1) 3%, rgba(0,149,185,1) 50%, rgba(0,58,150,0.9637605042016807) 100%);
-  padding:50px 0px;
-  margin: 10px 6vw;
-  border-radius: 5px;
+  text-align: center;
+  margin-top: 30px;
+  font-weight: 500;
+  font-size: calc(18px + 0.9vw);
 }
 /* #endregion HomePage */
