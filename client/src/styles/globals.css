@@ -29,6 +29,7 @@
   width:100%;
   justify-content: space-between;
 }
+/*-----------------------------------------------Start-Of-Navbar----------------------------------*/
 /* #region Navbar */
 .linkButtons{
   text-decoration: none;
@@ -113,6 +114,7 @@ nav{
 
 }
 /* #endregion Navbar */
+/*-----------------------------------------------Start-Of-HomePage--------------------------------*/
 /* #region HomePage */
 .homePage{
   display: grid;
@@ -156,3 +158,27 @@ nav{
   }
 }
 /* #endregion HomePage */
+/*-----------------------------------------------Start-Of-GameStuff-------------------------------*/
+/* #region GameStuff */
+.gameMain{
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  height:80vh;
+}
+.playBox{
+  
+}
+.toBeTyped{
+  display: flex;
+}
+.typingArea{
+  opacity: 0.5;
+  margin:auto;
+  height:35vh;
+  width:60vw;
+  padding:10px;
+  border: 2px solid;
+  border-radius: 5px;
+}
+/* #endregion GameStuff */

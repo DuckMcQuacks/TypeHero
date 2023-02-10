@@ -1,10 +1,19 @@
+import {useState} from "react"
+
 export default function Quotes(){
-    <main>
+    const words =["duck", "you"];
+    const [keyPressed, setKeyPressed] = useState("");
+    document.addEventListener("keydown",(e)=>{
+        setKeyPressed(e.key)
+        console.log(e.key)
+    })
+    return(
+    <main className="gameMain">
         <div className="playBox">
             <div className="runStats">
 
             </div>
-            <div className="typing area">
+            <div className="typingArea">
 
             </div>
             <div className="miniMenu">
@@ -12,5 +21,5 @@ export default function Quotes(){
                 <div>New quote</div>
             </div>
         </div>
-    </main>
+    </main>)
 }
