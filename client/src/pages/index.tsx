@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import styles from '@/styles/Home.module.css'
-
+import Link from "next/link";
 
 
 export default function Home() {
@@ -16,7 +16,20 @@ export default function Home() {
         <div className='homePage'>
         <div>
           <h1>Singleplayer</h1>
-          <div className='gameModes'></div>
+          <div className='gameModes'>
+          <Link className='modes' href="/gamemodes/quotes">
+            Quotes
+          </Link>
+          <Link className='modes' href="/gamemodes/random-words">
+            Random words
+          </Link>
+          <Link className='modes' href="/gamemodes/timed">
+            Timed run
+          </Link>
+          <Link className='modes' href="/gamemodes/custom">
+            Custom
+          </Link>
+          </div>
         </div>
         <div><h1>Multiplayer</h1></div>
         </div>

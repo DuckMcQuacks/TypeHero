@@ -33,11 +33,14 @@
 .linkButtons{
   text-decoration: none;
 }
+nav{
+  z-index: 20;
+}
 @media only screen and (min-width: 901px) {
   .navIcons{
     margin-right: 50px;
     border: none;
-    transition: transform 0.4s;
+    transition: transform 0.3s;
   }
   .navIcons:hover{
     transform: translateY(-5px) scale(1.05) rotateZ(2deg) translateX(3px);
@@ -116,17 +119,40 @@
   grid-template-columns:  1fr 1fr;
   height:600px;
 }
-.gameModes
-{
+.gameModes{
   display: grid;
+  padding:10px;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
+  gap: 40px;
+  height:80%;
 }
-.homePage h1
-{
+.homePage h1{
   text-align: center;
   margin-top: 30px;
   font-weight: 500;
   font-size: calc(18px + 0.9vw);
+}
+.gameModes>.modes{
+  isolation: isolate;
+  position: relative;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  text-align: center;
+  border-radius: 5px;
+  background: #FFAE00;
+  color:black;
+  width: 100%;
+  text-decoration: none;
+  font-size: calc(16px + 1vw);
+  font-weight: bold;
+}
+@media only screen and (max-width: 900px) {
+  .homePage{
+    display: grid;
+    grid-template-columns:  1fr;
+    height:600px;
+  }
 }
 /* #endregion HomePage */
