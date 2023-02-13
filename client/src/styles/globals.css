@@ -36,19 +36,23 @@
 }
 nav{
   z-index: 20;
+  padding: 20px 10px;
 }
 @media only screen and (min-width: 901px) {
   .navIcons{
     margin-right: 50px;
     border: none;
     transition: transform 0.3s;
+    background-color: transparent;
+  }
+  .nav-menu{
+    background-color: transparent;
   }
   .navIcons:hover{
     transform: translateY(-5px) scale(1.05) rotateZ(2deg) translateX(3px);
   }
   nav{
     font-size: calc(20px + .3vw);
-    padding: 1rem;
     display: flex;
     flex-flow: row nowrap;
     text-align: center;
@@ -71,7 +75,6 @@ nav{
   nav{
     position: relative;
     font-size: calc(20px + .3vw);
-    padding: 5px 10px;
     display: flex;
     flex-flow: column nowrap;
     text-align: center;

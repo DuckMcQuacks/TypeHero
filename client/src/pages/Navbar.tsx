@@ -23,8 +23,8 @@ export default function Navbar(){
     const iconSize = 70;
     return(
         <nav>
-            <div className="fflRow">
-            <Image style={{backgroundColor: "transparent", marginLeft: "20px"}} src={"/TypeHero.png"} width={innerWidth>900? 220 : 110} height={innerWidth>900? 100 : 50} title={"Home"} alt={"Home icon"} />
+            <div className="fflRow" style={{backgroundColor: "transparent"}}>
+            <Image priority={true} style={{backgroundColor: "transparent", marginLeft: "20px"}} src={"/TypeHero.png"} width={innerWidth>900? 220 : 110} height={innerWidth>900? 100 : 50} title={"Home"} alt={"Home icon"} />
             <Image src={ isMenuOpen ? "/close-svgrepo-com.svg" : "/menuIcon.svg"} style={{marginLeft:"auto", marginTop:"auto", marginBottom: "auto"}} width={40} height={40} alt ={"menu/close icon"} className={"hamburgIcon"} onClick={mobileMenuHandler}/>
             </div>
             <div className="nav-menu" style={{display: (isMenuOpen ? "flex" : "none"), flexFlow: (innerWidth>900 ? "row" : "column")}}>
