@@ -160,6 +160,16 @@ nav{
 /* #endregion HomePage */
 /*-----------------------------------------------Start-Of-GameStuff-------------------------------*/
 /* #region GameStuff */
+span{
+  opacity: 0.5;
+}
+.correct{
+  opacity: 1;
+}
+.incorrect{
+  opacity: 1;
+  color: rgb(236, 49, 49);
+}
 .gameMain{
   display: flex;
   flex-flow: column;
@@ -173,7 +183,6 @@ nav{
   display: flex;
 }
 .typingArea{
-  opacity: 0.5;
   margin:auto;
   height:35vh;
   width:60vw;
