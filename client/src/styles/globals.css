@@ -166,6 +166,29 @@ nav{
 span{
   opacity: 0.5;
 }
+.nextToType{
+  border-left:2px solid #ffb71a;
+}
+.nextToTypeBlinking{
+  animation: blink .7s infinite ease-in;
+}
+@keyframes blink {
+  0%{
+    border-left:2px solid #ffb71a;
+  }
+  30%{
+    border-left:2px solid #ffb71a;
+  }
+  50%{
+    border-left:2px solid #ffb61a00;
+  }
+  70%{
+    border-left:2px solid #ffb71a;
+  }
+  100%{
+    border-left:2px solid #ffb71a;
+  }
+}
 .correct{
   opacity: 1;
 }
@@ -174,10 +197,24 @@ span{
   color: rgb(236, 49, 49);
 }
 .gameMain{
+  margin:auto;
+  width:60vw;
   display: flex;
   flex-flow: column;
   justify-content: center;
   height:80vh;
+}
+.miniMenu{
+  display: flex;
+}
+.miniMenu>div{
+  margin: 10px;
+  cursor: pointer;
+  transition: color .3s, transform .3s ;
+}
+.miniMenu>div:hover{
+  color: #FFAE00;
+  transform: scale(1.05);
 }
 .playBox{
   
@@ -186,11 +223,14 @@ span{
   display: flex;
 }
 .typingArea{
-  margin:auto;
   height:35vh;
-  width:60vw;
-  padding:10px;
   border: 2px solid;
   border-radius: 5px;
+  padding:7px;
+}
+.runStats{
+display: flex;
+flex-flow: row wrap;
+justify-content: space-between;
 }
 /* #endregion GameStuff */
