@@ -1,8 +1,9 @@
 import {useState, useEffect}     from "react"
 interface props{
-    text : string
+    text : string,
+    getNewtext: VoidFunction;
 }
-export default function Game({text}:props){
+export default function Game({text,getNewtext}:props){
     const [chars, setChars] = useState(text)
     const [restart, setRestart] = useState(false);
     const [gameInfo, setGameInfo] = useState({
@@ -73,9 +74,9 @@ export default function Game({text}:props){
 
             setGameInfo({
                 wordPerMinute: Number(correct / 5 * (60000 / time)).toFixed(2),
-                characterPerMinute: Number(correct * (60000 / time)).toFixed(2),
+                characterPerMinute: Number(correct*(60000 / time)).toFixed(2),
                 correctOnes: String(correct),
-                missedOnes: String(chars.length-correct),
+                missedOnes: String(chars.length - correct),
                 totalTimeTaken: (time / 1000).toFixed(2)+'s',
             })
         }
@@ -106,7 +107,7 @@ export default function Game({text}:props){
                     return true})
                     updateVisuals()
                 }}>Retry</div>
-                <div>New quote</div>
+                <div onClick={getNewtext}>New quote</div>
             </div>
         </div>
     </main>)

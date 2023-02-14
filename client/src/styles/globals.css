@@ -3,7 +3,6 @@
   padding: 0;
   margin: 0;
   font-size: calc(14px + .3vw);
-  user-select: none;
   font-family: 'Source Sans Pro', sans-serif;
 }
 @media (prefers-color-scheme: dark) {
@@ -163,9 +162,6 @@ nav{
 /* #endregion HomePage */
 /*-----------------------------------------------Start-Of-GameStuff-------------------------------*/
 /* #region GameStuff */
-span{
-  opacity: 0.5;
-}
 .nextToType{
   border-left:2px solid #ffb71a;
 }
@@ -189,20 +185,13 @@ span{
     border-left:2px solid #ffb71a;
   }
 }
-.correct{
-  opacity: 1;
-}
-.incorrect{
-  opacity: 1;
-  color: rgb(236, 49, 49);
-}
 .gameMain{
   margin:auto;
   width:60vw;
   display: flex;
   flex-flow: column;
   justify-content: center;
-  height:80vh;
+  min-height:80vh;
 }
 .miniMenu{
   display: flex;
@@ -223,14 +212,25 @@ span{
   display: flex;
 }
 .typingArea{
-  height:35vh;
-  border: 2px solid;
+  padding-top: 5px;
+  min-height:25vh;
   border-radius: 5px;
-  padding:7px;
+}
+.typingArea > span{
+  opacity: 0.5;
+}
+.typingArea > .correct{
+  opacity: 1;
+}
+.typingArea > .incorrect{
+  opacity: 1;
+  color: rgb(236, 49, 49);
 }
 .runStats{
+padding-bottom: 10px;
 display: flex;
 flex-flow: row wrap;
 justify-content: space-between;
+border-bottom: 2px solid;
 }
 /* #endregion GameStuff */
