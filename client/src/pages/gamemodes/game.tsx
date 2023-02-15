@@ -1,9 +1,10 @@
 import {useState, useEffect}     from "react"
 interface props{
     text : string,
-    getNewtext: VoidFunction;
+    getNewtext: VoidFunction,
+    buttonText: string
 }
-export default function Game({text,getNewtext}:props){
+export default function Game({text,getNewtext,buttonText}:props){
     const [chars, setChars] = useState(text)
     const [restart, setRestart] = useState(false);
     const [gameInfo, setGameInfo] = useState({
@@ -107,7 +108,7 @@ export default function Game({text,getNewtext}:props){
                     return true})
                     updateVisuals()
                 }}>Retry</div>
-                <div onClick={getNewtext}>New quote</div>
+                <div onClick={getNewtext}>New {buttonText}</div>
             </div>
         </div>
     </main>)

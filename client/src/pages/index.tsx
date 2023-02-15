@@ -20,7 +20,7 @@ export default function Home() {
           <Link className='modes' href="/gamemodes/quotes">
             Quotes
           </Link>
-          <Link className='modes' href="/gamemodes/random-words">
+          <Link className='modes' href="/gamemodes/random">
             Random words
           </Link>
           <Link className='modes' href="/gamemodes/timed">
