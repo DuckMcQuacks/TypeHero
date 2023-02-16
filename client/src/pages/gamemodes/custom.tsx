@@ -1,31 +1,23 @@
 import {useState, useEffect,useRef} from "react"
-import Game from "./game"
+import Game from "../../components/game"
 export default function Quotes(){
-const [data, setData] = useState<Array<string>>([""])
-const [randomNumber, setRandomNumber] = useState<number>(21);
-function randomIntFromInterval(min : number, max : number) { // min and max included 
-    return Math.floor(Math.random() * (max - min + 1) + min)
-}
-function changeRandomNum(){
-    setRandomNumber(randomIntFromInterval(7,15));
-}
-function getQuote(){
-    fetch("https://random-word-api.herokuapp.com/word?number="+randomNumber)
-    .then(function(response) {
-      return response.json();
-    })
-    .then(function(data) {
-        setData(data)
-        changeRandomNum();
-    })
-}
-
-useEffect(()=>{
-    getQuote();
-},[])
+    const [custom, setCustom] = useState<string>("To set a custom text click on the \"new custom button\" ")
+    const [isVisible, setIsVisible] = useState<boolean>(false)
+    function customText(){
+        setIsVisible(true);
+    }
+    function handleChange(e: any){
+        setCustom(e.target.value)
+    }
     return(
         <>
-        <Game key={randomNumber} text={data.join(' ')} getNewtext={getQuote} buttonText={"words"}/> 
+        { isVisible &&
+        <div className="customSetter">
+            <textarea placeholder="Type your desired text here!" value={custom} onChange={handleChange}/>
+            <button onClick={()=>{setIsVisible(false)}}>Close</button>
+        </div>
+        }
+        <Game key={custom} text={custom} getNewtext={customText} buttonText={"custom"}/> 
         </>
     )
 }

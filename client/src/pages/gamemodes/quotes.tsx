@@ -1,5 +1,5 @@
 import {useState, useEffect,useRef} from "react"
-import Game from "./game"
+import Game from "../../components/game"
 interface quote{
     author: string,
     text: string

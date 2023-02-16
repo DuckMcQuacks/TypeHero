@@ -162,6 +162,33 @@ nav{
 /* #endregion HomePage */
 /*-----------------------------------------------Start-Of-GameStuff-------------------------------*/
 /* #region GameStuff */
+.customSetter{
+  position: absolute;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  border-radius: 5px;
+  top:20%;
+  left: 10%;
+  height:60%;
+  width:80%;
+  text-align: center;
+  z-index: 1;
+}
+.customSetter>textarea{
+  position: relative;
+  border-radius: 5px;
+  border: 1px solid;
+  align-self: center;
+  resize: none;
+  height:20vh;
+  width:60vw;
+}
+.customSetter> button{
+  position: absolute;
+  left:10%;
+  top:20%;
+}
 .nextToType{
   border-left:2px solid #ffb71a;
 }
@@ -234,3 +261,9 @@ justify-content: space-between;
 border-bottom: 2px solid;
 }
 /* #endregion GameStuff */
+/*-----------------------------------------------Start-Of-loginPage-------------------------------*/
+/* #region loginPage */
+.loginPage{
+  height:80vh;
+}
+/* #endregion loginPage */

@@ -1,5 +1,5 @@
 import {useState, useEffect,useRef} from "react"
-import Game from "./game"
+import Game from "../../components/game"
 export default function Quotes(){
 const [data, setData] = useState<Array<string>>([""])
 const [randomNumber, setRandomNumber] = useState<number>(21);
