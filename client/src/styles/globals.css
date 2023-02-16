@@ -265,5 +265,15 @@ border-bottom: 2px solid;
 /* #region loginPage */
 .loginPage{
   height:80vh;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+}
+form>h1{
+  letter-spacing: 8px;
+  font-weight: 600;
+  font-size: calc(22px + 0.4vw);
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 /* #endregion loginPage */
