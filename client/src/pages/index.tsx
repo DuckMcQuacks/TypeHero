@@ -14,24 +14,20 @@ export default function Home() {
       </Head>
       <main>
         <div className='homePage'>
-        <div>
-          <h1>Singleplayer</h1>
           <div className='gameModes'>
           <Link className='modes' href="/gamemodes/quotes">
             Quotes
           </Link>
           <Link className='modes' href="/gamemodes/random">
-            Random words
-          </Link>
-          <Link className='modes' href="/gamemodes/timed">
-            Timed run
+            Random
           </Link>
           <Link className='modes' href="/gamemodes/custom">
             Custom
           </Link>
+          <Link className='modes' href="/gamemodes/multiplayer">
+            Multiplayer
+          </Link>
           </div>
-        </div>
-        <div><h1>Multiplayer</h1></div>
         </div>
       </main>
     </>

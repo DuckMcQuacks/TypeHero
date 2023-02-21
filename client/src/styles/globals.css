@@ -120,16 +120,16 @@ nav{
 /* #region HomePage */
 .homePage{
   display: grid;
-  grid-template-columns:  1fr 1fr;
-  height:600px;
+  min-height: 80vh;
+  align-items: center;
 }
 .gameModes{
   display: grid;
   padding:10px;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
   gap: 40px;
-  height:80%;
+  background: transparent;
 }
 .homePage h1{
   text-align: center;
@@ -138,25 +138,54 @@ nav{
   font-size: calc(18px + 0.9vw);
 }
 .gameModes>.modes{
-  isolation: isolate;
+  height:70vh;
   position: relative;
   display: flex;
   flex-flow: column;
   justify-content: center;
   text-align: center;
   border-radius: 5px;
-  background: #FFAE00;
+  background: #ffae00;
   color:black;
-  width: 100%;
   text-decoration: none;
   font-size: calc(16px + 1vw);
-  font-weight: bold;
+}
+.gameModes>.modes::after{
+  position: absolute;
+  content: "";
+  inset: 15px;
+  --b: 3px;   /* thickness of the border */
+  --c: rgb(0, 0, 0);   /* color of the border */
+  --w: 6vw;  /* width of border */
+
+  border: var(--b) solid #0000; /* space for the border */
+  --_g: #0000 90deg,var(--c) 0;
+  --_p: var(--w) var(--w) border-box no-repeat;
+  background:
+    conic-gradient(from 90deg  at top    var(--b) left  var(--b),var(--_g)) 0    0    / var(--_p),
+    conic-gradient(from 180deg at top    var(--b) right var(--b),var(--_g)) 100% 0    / var(--_p),
+    conic-gradient(from 0deg   at bottom var(--b) left  var(--b),var(--_g)) 0    100% / var(--_p),
+    conic-gradient(from -90deg at bottom var(--b) right var(--b),var(--_g)) 100% 100% / var(--_p);
 }
 @media only screen and (max-width: 900px) {
   .homePage{
     display: grid;
     grid-template-columns:  1fr;
     height:600px;
+  }
+  .gameModes{
+    display: grid;
+    padding:10px;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    gap: 40px;
+  }
+  .gameModes>.modes{
+    height:80vh;
+    font-size: calc(16px + 4vw);
+  }
+  .gameModes>.modes::after{
+    --w: 24vw;  /* width of border */
   }
 }
 /* #endregion HomePage */
