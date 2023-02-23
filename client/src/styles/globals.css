@@ -14,9 +14,9 @@
 }
 @media (prefers-color-scheme: light) {
   *{
-    background: #ffffff;
-    color: rgb(0, 0, 0);
-    border: #333;
+    background: #f3f3f3;
+    border: #000000;
+    color: rgb(40, 40, 40);
   }
 }
 .ml-auto{
@@ -30,7 +30,7 @@
 }
 /*-----------------------------------------------Start-Of-Navbar----------------------------------*/
 /* #region Navbar */
-.linkButtons{
+.linkButtons{ 
   text-decoration: none;
 }
 nav{
@@ -299,10 +299,56 @@ border-bottom: 2px solid;
   justify-content: center;
   align-items: center;
 }
+form{
+  border-radius: 2px 2px 5px 5px;
+  border: 2px solid rgb(10, 10, 10);
+  padding: 5px;
+  text-align: center;
+}
+form>div{
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  border-top: 1px solid gray;
+  padding: 0 20px; 
+  padding-bottom:20px;
+  background-color: transparent;
+}
+form>div>input{
+  border-radius: 2px;
+  padding: 20px 10px;
+  margin: 10px 20px;
+  border-bottom: 1px solid;
+  background-color: transparent;
+}
+form>div>button{
+  font-size: larger;
+  width:80%;
+  background: linear-gradient(45deg, rgba(255,227,0,1) 0%, rgba(255,248,0,1) 100%);
+  cursor: pointer;
+  padding: 5px;
+  margin: 20px 0;
+  border-radius: 15px;
+  color:black;
+  background-color: transparent;
+}
 form>h1{
+  padding:20px;
   letter-spacing: 8px;
   font-weight: 600;
   font-size: calc(22px + 0.4vw);
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  background-color: transparent;
+}
+@media (prefers-color-scheme: dark) {
+  form{
+    background-color: #000000;
+  }
+}
+@media (prefers-color-scheme: light) {
+  form{
+    background-color: #ffffff;
+  }
 }
 /* #endregion loginPage */
