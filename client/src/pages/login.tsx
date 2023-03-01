@@ -16,7 +16,7 @@ export default function login()
             return {...prev, [e.target.name]: e.target.value}            
         })
     }
-    function handleSubmit(e:React.FormEvent<HTMLFormElement>){
+    async function handleSubmit(e:React.FormEvent<HTMLFormElement>){
         e.preventDefault();
         if(formValues.username.includes(" ")){
             alert("Username cannot contain white spaces!")
@@ -26,6 +26,27 @@ export default function login()
             alert("Username cannot contain special characters!")
             return 2;
         }
+        await fetch('/api/userLoginController', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+              name: formValues.username,
+              password: formValues.password,
+            }),
+          }) .then((response) => response.json())
+          .then((data) =>{          
+            if(data == "failed"){
+              alert("Username");
+              return 1;
+            }
+            window.localStorage.setItem("sessionKey", data)
+          });
+          setFormValues({
+            username:"",
+            password:""
+        })
     }
     return(
         <div className="loginPage">

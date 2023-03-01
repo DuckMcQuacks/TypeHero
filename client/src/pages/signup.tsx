@@ -18,7 +18,7 @@ export default function signup()
             return {...prev, [e.target.name]: e.target.value}            
         })
     }
-    function handleSubmit(e:React.FormEvent<HTMLFormElement>){
+    async function handleSubmit(e:React.FormEvent<HTMLFormElement>){
         e.preventDefault();
         if(formValues.password != formValues.passwordConfirm){
             alert("Passwords do not match!");
@@ -32,6 +32,27 @@ export default function signup()
             alert("Username cannot contain special characters!")
             return 2
         }
+        await fetch('/api/userRegisterController', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+              name: formValues.username,
+              password: formValues.password,
+            }),
+          }) .then((response) => response.json())
+          .then((data) =>{          
+          if(data == "failed"){
+            alert("Incorrect password or username!");
+            return 1;
+          }
+          window.localStorage.setItem("sessionKey", data)
+        });
+          setFormValues({
+            username:"",
+            password:"",
+            passwordConfirm: ""})
         
     }
     return(

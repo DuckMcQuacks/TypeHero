@@ -8,7 +8,6 @@ export default async function userRegisterController(req: Request, res : Respons
             {
                 name: req.body.name,
                 password: hash,
-                email: req.body.email
             }
         )
         const createUser = await newUser.save((err,user)=>{
