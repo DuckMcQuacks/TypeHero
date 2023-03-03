@@ -38,7 +38,7 @@ export default function login()
           }) .then((response) => response.json())
           .then((data) =>{          
             if(data == "failed"){
-              alert("Username");
+              alert("Username or password is incorrect");
               return 1;
             }
             window.localStorage.setItem("sessionKey", data)
